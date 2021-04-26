@@ -12,9 +12,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * @author longzhonghua
- * @data 2/26/2019 6:53 PM
- * 用户名密码错误执行
+ * @author :wn
+ * @program : blog
+ * @descript :
+ * @create :2021-03-20 16:34
  */
 @Component("myAuthenticationFailHandler")
 public class MyAuthenticationFailHandler extends SimpleUrlAuthenticationFailureHandler {
