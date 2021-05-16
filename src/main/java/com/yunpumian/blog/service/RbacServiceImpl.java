@@ -1,15 +1,19 @@
 package com.yunpumian.blog.service;
 
+import com.yunpumian.blog.config.exception.GlobalExceptionHandler;
 import com.yunpumian.blog.mapper.PermissionMapper;
 import com.yunpumian.blog.mapper.RoleMapper;
 import com.yunpumian.blog.mapper.UserMapper;
 import com.yunpumian.blog.pojo.Permission;
 import com.yunpumian.blog.pojo.Role;
 import com.yunpumian.blog.pojo.User;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.util.AntPathMatcher;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -51,11 +55,17 @@ public class RbacServiceImpl implements RbacService {
             try {
                 String user_role = byAccount.getUser_role();
                 Role byDescription = roleMapper.findByDescription(user_role);
+
                 Permission permissionByRole1 = permissionMapper.findPermissionByRole(byDescription.getRole());
+                if (permissionByRole1.equals(null)){
+
+                    new GlobalExceptionHandler().handleAccessException(new AccessDeniedException("权限不够"),(Model) new ModelAndView("/error/error"));
+                }
                 urls.add(permissionByRole1.getUrl());
 
             } catch (Exception e) {
-                e.printStackTrace();
+               e.printStackTrace();
+
             }
             for (String url : urls) {
                 if (antPathMatcher.match(url, request.getRequestURI())) {

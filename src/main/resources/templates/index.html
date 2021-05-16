@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="utf-8">
+		<title>云扑面</title>
+
+		<meta name="keywords" content="AOS, animate on scroll, css3滚动动画, 滚动动画">
+		<meta name="viewport" content="width=device-width">
+		<link href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.3/aos.css" rel="stylesheet">
+		<link rel="stylesheet" href="../static/css/styles.css" />
+		<link rel="stylesheet" href="../static/layui/css/layui.css"/>
+		<link rel="stylesheet" href="../static/css/home.css"/>
+		<script src="../static/js/jquery-3.4.1.min.js"></script>
+
+	</head>
+
+	<body>
+		<div class="backgrounds overlay">
+			<div>
+				<style>
+					canvas {
+						background: orange;
+						;
+						display: block;
+						width: calc(100%);
+						height: calc(100vh);
+					}
+				</style>
+				<canvas id="myShape"></canvas>
+			</div>
+			<div class="background" data-aos="fade-in" data-aos-duration="1500" data-aos-anchor=".section--hero"></div>
+		</div>
+
+		<header class="hero">
+
+			<div id="daohanlan" style="margin: 25px 25px;">
+				<style>
+					.nav {
+						display: -ms-flexbox;
+						display: flex;
+						-ms-flex-wrap: wrap;
+						flex-wrap: wrap;
+						padding-left: 0;
+						margin-bottom: 0;
+						list-style: none
+					}
+					
+					.justify-content-end {
+						-ms-flex-pack: end!important;
+						justify-content: flex-end!important
+					}
+					
+					.nav-link {
+						display: block;
+						padding: .5rem 1rem
+					}
+				</style>
+
+				<ul class="nav justify-content-end ">
+
+					<a class="nav-link" href="/login" style="!important">
+						<font color="black">登录</font>
+					</a>
+					<a class="nav-link  zhuche"  style="!important">
+						<font color="black">注册</font>
+					</a>
+				</ul>
+
+			</div>
+
+			<div class="hero-center">
+				<h1 class="hero__logo" data-aos="zoom-in">云扑面</h1>
+				<h2 class="hero__text" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">突然间我有了一种扑面而来的感觉</h2>
+			</div>
+			<span class="hero__scroll" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">
+				向下滚动 <br>
+				<i class="chevron bottom"></i>
+			</span>
+
+		</header>
+		<section class="section section--code">
+			<div class="container">
+				<h3 class="section-title">
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=1000 height=86 src="//music.163.com/outchain/player?type=2&id=1423974713&auto=1&height=66"></iframe>
+				</h3>
+				
+				<h2 class="section-title">JAVA学习流程</h2>
+				<div class="code code--small code--left" data-aos="fade-up">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">什么是Java</a></code></pre>
+				</div>
+				<div class="code code--small code--right" data-aos="fade-down">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/面向对象程序设计/24792?fr=aladdin">面向对象程序设计</a>
+            </code>
+            </pre>
+				</div>
+				<div class="code code--small code--left" data-aos="fade-right">
+					<pre><code class="html">
+            	<a href="/javaSe?blog_type=javase"><font color="red">JAVASE</font></a></code></pre>
+				</div>
+				<div class="code code--small code--right" data-aos="fade-left">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">JAVAEE</a></code></pre>
+				</div>
+				<div class="code code--small code--left" data-aos="fade-up-right">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">JAVAME</a></code></pre>
+				</div>
+				<div class="code code--small code--right" data-aos="fade-up-left">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">JAVA框架简介</a></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">JAVA框架</h2>
+				<div class="code code--small code--left" data-aos="flip-left">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">Struts2</a></code></pre>
+				</div>
+				<div class="code code--small code--right" data-aos="flip-right">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">hibernate</a></code></pre>
+				</div>
+				<div class="code code--small code--left" data-aos="flip-up">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">Spring</a></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">进阶</h2>
+				<div class="code code--small code--left" data-aos="zoom-in">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">SpringMVC</a></code></pre>
+				</div>
+				<div class="code code--small code--right" data-aos="zoom-in-up">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">Mybatis</a></code></pre>
+				</div>
+				<div class="code code--small code--left" data-aos="zoom-in-down">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">SpringBoot</a></code></pre>
+				</div>
+				
+				<div class="code code--small code--right" data-aos="zoom-in-left">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">Linux</a></code></pre>
+				</div>
+				<div class="code code--small code--left" data-aos="zoom-in-right">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">SpringCloud</a></code></pre>
+				</div>
+
+				<div class="code code--small code--right" data-aos="zoom-out">
+						<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">SpringData</a></code></pre>
+				</div>
+				<div class="code code--small code--left" data-aos="zoom-out-up">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">SpringSecurity</a></code></pre>
+				</div>
+					
+				<div class="code code--small code--right" data-aos="zoom-out-down">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">redis</a></code></pre>
+				</div>
+				<div class="code code--small code--left" data-aos="zoom-out-right">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">MongoDB</a></code></pre>
+				</div>
+				<div class="code code--small code--right" data-aos="zoom-out-left">
+					<pre><code class="html">
+            	<a href="https://baike.baidu.com/item/Java/85979?fr=aladdin">Elasticsearch</a></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">数据结构</h2>
+				<div class="code code--left" data-aos="fade-up" data-aos-duration="3000">
+					<pre><code class="html">&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="3000">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--right" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+					<pre><code class="html">&lt;div data-aos="fade-down"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="linear"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="1500">&#13;&lt;/div></code></pre>
+				</div>
+				<div id="example-anchor" class="code code--left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+					<pre><code class="html" >&lt;div data-aos="fade-right"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="300"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-in-sine">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--right" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
+					<pre><code class="html">&lt;div data-aos="fade-left"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor="#example-anchor"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="500"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="500">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--left" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+					<pre><code class="html">&lt;div data-aos="fade-zoom-in"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-in-back"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-delay="300"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="0">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--right" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+					<pre><code class="html">&lt;div data-aos="flip-left"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-out-cubic"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="2000">&#13;&lt;/div></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">Anchor placement</h2>
+
+				<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="top-bottom">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="center-bottom">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="bottom-bottom">&#13;&lt;/div></code></pre>
+				</div>
+
+				<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="top-center">
+					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="top-center">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="center-center">
+					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="center-center">&#13;&lt;/div></code></pre>
+				</div>
+				<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="bottom-center">
+					<pre><code class="html">&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="bottom-center">&#13;&lt;/div></code></pre>
+				</div>
+
+			</div>
+		</section>
+
+		<footer class="footer">
+		
+		
+		</footer>
+		<div id="zhucheDOM" hidden="hidden">
+			<form class="layui-form" action="">
+				<div class="addBoxCon">
+				<!--	<div class="layui-form-item">
+					<img width="80" class="uploadImg" src="../static/img/touxiang.png" alt="">
+					<button type="button" class="layui-btn" id="test1">
+						<i class="layui-icon">&#xe67c;</i>上传头像
+					</button>
+			    	</div>-->
+					<div class="layui-form-item">
+						<img width="80" class="uploadImg" src="../static/img/touxiang.png" alt="">
+						<button type="button" class="layui-btn" id="test1">
+							<i class="layui-icon">&#xe67c;</i>上传头像
+						</button>
+						<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：
+						<input type="text" class="otherName"  placeholder="昵称">
+						<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：
+						<input type="text" class="emileAddress" placeholder="邮箱地址">
+                        <br>
+                        <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名言：
+                        <input type="text" class="motto" placeholder="名言">
+						<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：
+						<input type="password" class="password" placeholder="密码">
+						<br>
+						<br>
+						&nbsp;确定密码：
+						<input type="password" class="enPassword" placeholder="确定密码">
+						<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button class="layui-btn tijiao" lay-submit lay-filter="formDemo" >立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">获取账号</button>
+
+
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+
+		<script src="../static/js/highlight-10.1.2/highlight.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.3/aos.js"></script>
+
+		<script>
+			AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000
+			});
+		</script>
+
+		<script>
+			hljs.initHighlightingOnLoad();
+
+			$('.hero__scroll').on('click', function(e) {
+				$('html, body').animate({
+					scrollTop: $(window).height()
+				}, 1200);
+			});
+		</script>
+		<script type="text/javascript" src="../static/js/shape-shifter.js"></script>
+		<script type="text/javascript" src="../static/layui/layui.js"></script>
+		<script  th:inline="javascript" >
+			var imgsrc="";
+
+
+			let shapeShifter = S;
+			window.onload = function() {
+				//shapeShifter.init(document.getElementById('myShape'),'任意内容');
+				shapeShifter.init(document.getElementById('myShape'), '未曾青梅|青梅枯萎 |芬芳满地 |不见竹马|竹马老去|相思万里|');
+
+				setTimeout(() => {
+					shapeShifter.UI.reset()
+				}, 20000);
+			};
+			$(".zhuche").click(function () {
+				layui.use('layer',function () {
+					var layer=layui.layer;
+					layer.open({
+						type:1,
+						title:'注册界面',
+						content:$("#zhucheDOM"),
+						anim:1,
+						area:['350px','400px']
+
+					})
+				});
+
+			});
+			layui.use('upload', function(){
+				var upload = layui.upload;
+				//执行实例
+				var uploadInst = upload.render({
+					elem: '#test1' //绑定元素
+					,url: '/user/upload' //上传接口
+					,done: function(res){
+						if(res.code==1){
+							$('.uploadImg').attr('src',res.fileName);
+							imgsrc=res.fileName
+						}
+					}
+					,error: function(){
+						//请求异常回调
+					}
+				});
+			});
+			$(".tijiao").click(function () {
+				var password=$(".password").val();
+				var enpassword=$(".enPassword").val();
+				if (password==enpassword){
+					$.ajax({
+						url: "/user/register",
+						method:"post",
+						data:JSON.stringify({
+							user_othername:$('.otherName').val(),
+							user_emile:$('.emileAddress').val(),
+							user_img:imgsrc,
+							user_motto:$('.motto').val(),
+							user_password:$('.password').val()
+						}),
+
+					});
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

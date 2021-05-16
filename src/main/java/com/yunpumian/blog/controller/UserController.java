@@ -3,6 +3,7 @@ package com.yunpumian.blog.controller;
 import com.alibaba.druid.support.json.JSONUtils;
 import com.yunpumian.blog.pojo.User;
 import com.yunpumian.blog.service.userservice.UserService;
+import com.yunpumian.blog.service.userservice.UserServiceImpl;
 import com.yunpumian.blog.utils.JsonResult;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ import java.util.UUID;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    UserService userService;
+    UserServiceImpl userService;
     //注册方法
     @RequestMapping(value = "/register ")
     public String register(@RequestBody User user) {
@@ -103,15 +104,18 @@ public class UserController {
     }
     //根据账号删除
     @PostMapping("/deleteByAccount")
-    public Map deleteByAccount(@Param("account")String account){
+    @ResponseBody
+    public Map deleteByAccount(@Param("account") String account){
         int i = userService.deleteByAccount(account);
         JsonResult jsonResult=new JsonResult();
         if(i>0){
             jsonResult.setCode(1);
+            System.out.println(jsonResult.getValues());
             return jsonResult.getValues();
 
         }else{
             jsonResult.setCode(0);
+            System.out.println(jsonResult.getValues());
             return jsonResult.getValues();
         }
     }

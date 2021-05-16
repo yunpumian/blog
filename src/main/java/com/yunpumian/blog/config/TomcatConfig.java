@@ -12,8 +12,9 @@ import org.springframework.context.annotation.Configuration;
  * @author :wn
  * @program : blog
  * @descript : tomcat配置
- * @create :2021-04-12 18:54
- */
+ * @create :2021-04-12 18:54*/
+
+
 @Configuration
 public class TomcatConfig {
     @Bean

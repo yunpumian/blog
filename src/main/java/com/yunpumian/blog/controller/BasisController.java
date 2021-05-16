@@ -21,12 +21,12 @@ public class BasisController {
     @Resource
     UserMapper userMapper;
 
-    @RequestMapping("/userMain")
+    @RequestMapping("userMain")
     public ModelAndView success() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = ((UserDetails) principal).getUsername();
         User user = userMapper.findByAccount(username);
-        ModelAndView md = new ModelAndView("/userMain");
+        ModelAndView md = new ModelAndView("userMain");
         md.addObject("user", user);
         return md;
     }

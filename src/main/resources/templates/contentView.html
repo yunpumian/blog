@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+</head>
+
+<body class="layui-bg-cyan">
+<div class="layui-layout layui-layout-admin ">
+    <div class="layui-header layui-bg-gray">
+        <div class="layui-logo" style="color: #01AAED;">个人博客</p>
+        </div>
+        <ul class="layui-nav ">
+            <li class="layui-nav-item layui-col-lg-offset10">
+                <img src="layui/images/log.jpg" class="layui-nav-img">
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a>修改信息</a>
+                    </dd>
+                    <dd>
+                        <a href="exit.action">退出</a>
+                        <form action="exit.action" method="post">
+                        </form>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black  layui-bg-gray">
+        <div class="layui-side-scroll layui-bg-gray">
+            <ul class="layui-nav layui-nav-tree layui-bg-gray"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <img src="layui/images/log.jpg" class="layui-nav-img"/>
+                    <br>
+                    昵称：  <p th:text="${writer.user_othername}"></p>
+                    座右铭： <p th:text="${writer.user_motto}"></p>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body layui-bg-gray ">
+        <div class="layui-card">
+            <div class="layui-card-header" >
+                <h2 th:text="${blog.blog_subject}"></h2>
+            </div>
+            <br><br><br>
+            <br>
+            <div class="layui-card-body" th:text="${blog.blog_content}"></div>
+
+
+        </div>
+
+    </div>
+    <div class="layui-footer">
+
+        <div class="layui-layout-right">
+            <form action="/sendMail" method="post" class="layui-form">
+                <input type="text" name="content" style="width: 800px;height: 30px;"   placeholder="给管理员发送邮件">
+                <input type="submit" class="layui-btn-danger layui-btn">
+            </form>
+        </div>
+
+
+
+
+    </div>
+
+
+    <script src="../static/layui/layui.js"></script>
+    <script>
+        layui.use('element', function() {
+            var element = layui.element;
+        });
+    </script>
+</div>
+</body>
+
+</html>

@@ -10,11 +10,12 @@ import org.springframework.stereotype.Service;
  */
 
 public interface MailService {
-    /**
-     * @param from
-     * @param to
-     * @param subject
-     * @param content
-     */
+/**
+ *@Description: 发送邮箱
+ *@Param: [from, to, subject, content] 
+ *@return: void
+ *@date: 2021/5/16
+**/
+
     void sendMessage(String from, String to, String subject, String content);
 }

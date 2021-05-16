@@ -19,12 +19,13 @@ import java.util.List;
  * @create :2021-04-09 17:33
  */
 @Service
-@CacheConfig(cacheNames = "userService")
+@CacheConfig(cacheNames = "users")
 public class UserServiceImpl implements UserService {
     @Resource
     UserMapper userMapper;
 
     @Override
+    @Cacheable(key = "#account")
     public User selectUser(String account) {
         User byAccount = userMapper.findByAccount(account);
         return byAccount;
@@ -43,18 +44,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Cacheable(value = "userList", keyGenerator = "keyGenerator")
     public List<User> findAll() {
         List<User> all = userMapper.findAll();
         return all;
     }
-    @CacheEvict(value = "userList", keyGenerator = "keyGenerator")
+
     @Override
+    @CachePut(key = "#user_account")
     public Boolean updateRoleByAccount(String role, String user_account) {
         int i = userMapper.updateRoleByAccount(role, user_account);
         if(i>0){
+            System.out.println("修改成功");
             return true;
         }else {
+            System.out.println("修改失败");
             return false;
         }
     }
