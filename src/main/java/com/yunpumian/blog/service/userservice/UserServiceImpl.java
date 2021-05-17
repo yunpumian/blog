@@ -61,4 +61,23 @@ public class UserServiceImpl implements UserService {
             return false;
         }
     }
+
+    @Override
+    public Boolean addUser(User user) {
+        User byAccount = userMapper.findByAccount(user.getUser_account());
+        if (byAccount!=null){
+            System.out.println("该账号已经被注册");
+            return false;
+        }else {
+            User byAccount1 = userMapper.findByAccount(user.getUser_emile());
+            if(byAccount1!=null){
+                System.out.println("该邮箱已经被注册");
+                return false;
+            }else {
+                userMapper.addUser(user);
+                return true;
+            }
+        }
+
+    }
 }

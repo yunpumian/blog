@@ -29,6 +29,12 @@ public class MailController {
     String adminEmail;
     @Resource
     private UserMapper userMapper;
+    /**
+     *@Description: 用户的反馈情况
+     *@Param: [request, content]
+     *@return: java.lang.String
+     *@date: 2021/5/16
+    **/
 
     @RequestMapping("/sendMail")
     public String sendMail(HttpServletRequest request, @Param("content") String content) {
@@ -43,6 +49,6 @@ public class MailController {
                 +content+"\n发送IP地址为："+ip);
         System.out.println("发送成功");
         return "redirect:/userMain";
-
     }
+
 }

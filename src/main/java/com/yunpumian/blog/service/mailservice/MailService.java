@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  * @descript :
  * @create :2021-03-22 21:20
  */
-
+@SuppressWarnings("all")
 public interface MailService {
 /**
  *@Description: 发送邮箱
@@ -18,4 +18,6 @@ public interface MailService {
 **/
 
     void sendMessage(String from, String to, String subject, String content);
+
+
 }

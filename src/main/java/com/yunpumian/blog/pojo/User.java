@@ -24,8 +24,8 @@ import java.util.List;
 @AllArgsConstructor
 public class User implements UserDetails, Serializable {
     private int id;
-    private String user_img;
-    private String user_account;
+   private String user_img;
+   private String user_account;
     private String user_password;
     private String user_othername;
     private int subscriptioned_number;

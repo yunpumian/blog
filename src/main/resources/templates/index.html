@@ -238,7 +238,7 @@
 		
 		</footer>
 		<div id="zhucheDOM" hidden="hidden">
-			<form class="layui-form" action="">
+
 				<div class="addBoxCon">
 				<!--	<div class="layui-form-item">
 					<img width="80" class="uploadImg" src="../static/img/touxiang.png" alt="">
@@ -280,7 +280,7 @@
 					</div>
 
 				</div>
-			</form>
+
 		</div>
 
 
@@ -353,17 +353,18 @@
 			$(".tijiao").click(function () {
 				var password=$(".password").val();
 				var enpassword=$(".enPassword").val();
+				console.log($('.otherName').val()+$('.emileAddress').val())
 				if (password==enpassword){
 					$.ajax({
 						url: "/user/register",
 						method:"post",
-						data:JSON.stringify({
+						data:{
 							user_othername:$('.otherName').val(),
 							user_emile:$('.emileAddress').val(),
 							user_img:imgsrc,
 							user_motto:$('.motto').val(),
 							user_password:$('.password').val()
-						}),
+						}
 
 					});
 				}

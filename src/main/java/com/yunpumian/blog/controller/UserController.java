@@ -2,11 +2,14 @@ package com.yunpumian.blog.controller;
 
 import com.alibaba.druid.support.json.JSONUtils;
 import com.yunpumian.blog.pojo.User;
+import com.yunpumian.blog.service.mailservice.MailService;
 import com.yunpumian.blog.service.userservice.UserService;
 import com.yunpumian.blog.service.userservice.UserServiceImpl;
+import com.yunpumian.blog.utils.AccountUtils;
 import com.yunpumian.blog.utils.JsonResult;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,10 +35,21 @@ import java.util.UUID;
 public class UserController {
     @Autowired
     UserServiceImpl userService;
+    @Autowired
+    MailService mailService;
+    @Autowired
+    AccountUtils accountUtils;
+    @Value("${spring.mail.username}")
+    String adminEmail;
     //注册方法
     @RequestMapping(value = "/register ")
     public String register(@RequestBody User user) {
-        return null;
+        String account = accountUtils.getAccount();
+        user.setUser_role("用户");
+        user.setUser_account(account);
+        mailService.sendMessage(adminEmail,user.getUser_emile(),"账号","尊敬的用户：你的账号为"+account+"！你可以用账号或者邮件登录！欢迎你的加入");
+        userService.addUser(user);
+        return "redirect:/index";
     }
 
     //获取全部用户
@@ -105,17 +119,15 @@ public class UserController {
     //根据账号删除
     @PostMapping("/deleteByAccount")
     @ResponseBody
-    public Map deleteByAccount(@Param("account") String account){
+    public Map deleteByAccount(@RequestParam("account") String account){
         int i = userService.deleteByAccount(account);
         JsonResult jsonResult=new JsonResult();
         if(i>0){
             jsonResult.setCode(1);
-            System.out.println(jsonResult.getValues());
             return jsonResult.getValues();
 
         }else{
             jsonResult.setCode(0);
-            System.out.println(jsonResult.getValues());
             return jsonResult.getValues();
         }
     }

@@ -304,24 +304,20 @@
                             $.ajax({
                                 url: "/user/deleteByAccount",
                                 method:"post",
-                                data:JSON.stringify({
-                                    account: account
-
-                                })
-                                ,done:function (res) {
+                                data:{
+                                    account:account
+                                },
+                                success:function (res) {
                                     if(res.code==1){
-                                        layui.use('layer', function(){
-                                            var layer = layui.layer;
-
-                                            layer.msg('删除成功');
-                                        });
-                                    }else{
+                                      layer.msg("删除成功");
+                                    }else {
                                         layui.use('layer', function(){
                                             var layer = layui.layer;
 
                                             layer.msg('删除失败');
                                         });
                                     }
+                                    window.location.replace("/userMain");
 
                                 }
                             });

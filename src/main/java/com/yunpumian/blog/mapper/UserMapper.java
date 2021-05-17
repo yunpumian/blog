@@ -24,7 +24,7 @@ public interface UserMapper {
     @Select("select * from blog_user where user_account=#{param1} or user_emile=#{param1}  ")
     @Results({
             @Result(column = "id", property = "id"),
-            @Result(column = "user_image", property = "user_img"),
+            @Result(column = "user_img", property = "user_img"),
             @Result(column = "user_account", property = "user_account"),
             @Result(column = "user_password", property = "user_password"),
             @Result(column = "user_othername", property = "user_othername"),
@@ -41,7 +41,7 @@ public interface UserMapper {
     @Select("select * from blog_user where user_othername=#{param1} ")
     @Results({
             @Result(column = "id", property = "id"),
-            @Result(column = "user_image", property = "user_img"),
+            @Result(column = "user_img", property = "user_img"),
             @Result(column = "user_account", property = "user_account"),
             @Result(column = "user_password", property = "user_password"),
             @Result(column = "user_othername", property = "user_othername"),
@@ -55,7 +55,8 @@ public interface UserMapper {
     )
     User findByOtherName(@Param("user_othername") String user_othername);
 
-    @Insert("insert into blog_user value(#{user.user_image},#{user.user_account},${user.user_password},${user.user_othername},${user.subscriptioned_number},${user.subscription_number},${user.user_role},${user.user_blog_id},${user.user_emile},${user.user_motto})")
+    @Insert("insert into blog_user(user_image,user_account,user_password,user_othername,subscriptioned_number,subscription_number,user_role,user_blog_id,user_emile,user_motto) value ('${user.user_img}','${user.user_account}','${user.user_password}','${user.user_othername}',${user.subscriptioned_number},${user.subscription_number},'${user.user_role}','${user.user_blog_id}','${user.user_emile}','${user.user_motto}')")
+
     Boolean addUser(@Param("user") User user);
 
     /**

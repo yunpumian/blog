@@ -1,0 +1,13 @@
+# Default ignored files
+/workspace.xml
+
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+../个人博客（SpringBoot）.iml
+../pom.xml
+
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
